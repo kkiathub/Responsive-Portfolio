@@ -47,6 +47,8 @@ h1 {
   font-size: 30px;
   line-height: 49px;
   border-bottom: 3px solid #dddddd;
+  animation-name: h1-anim;
+  animation-duration: 4s;
 }
 
 h2,
@@ -129,7 +131,8 @@ h3, h2 {
 .main-section {
   float: left;
   width: 100%;
-  max-width: 960px;
+  /* max-width: 960px; */
+  max-width: 650px;
   padding: 30px;
   margin: 0 0 40px;
   background: #ffffff;
@@ -212,4 +215,60 @@ input[type=submit] {
   cursor: pointer;
   background: #4aaaa5;
   border: 0 none;
+}
+
+@keyframes h1-anim {
+  0%   {color: #4aaaa5; padding-left:0px; letter-spacing:0px;}
+  50%  {color: rgb(190, 16, 190); padding-left:380px; letter-spacing:5px;}
+  100% {color: #4aaaa5; padding-left:0px; letter-spacing:0px; }
+}
+
+@keyframes h1-anim-short {
+  0%   {color: #4aaaa5; padding-left:0px; letter-spacing:0px;}
+  50%  {color: rgb(190, 16, 190); padding-left:190px; letter-spacing:5px;}
+  100% {color: #4aaaa5; padding-left:0px; letter-spacing:0px; }
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    padding: 0px 20px;
+  }
+  h1 {
+    animation-name: h1-anim;
+    animation-duration: 4s;
+  }
+}
+ 
+@media screen and (max-width: 768px) {
+  .main-section {
+    margin: 0 10px;
+  }
+  h1 {
+    animation-name: h1-anim;
+    animation-duration: 4s;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #logo, nav {
+    width: 100%;
+  }
+
+  .main-section {
+    margin-top: 25px;
+  }
+
+  nav {
+    text-align: center;
+    margin: 0px;
+   }
+
+   .auth-image, .work {
+     width: 100%;
+  }
+  h1 {
+    animation-name: h1-anim-short;
+    animation-duration: 4s;
+  }
+
 }
